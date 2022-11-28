@@ -1,0 +1,3 @@
+# Tài liệu tham khảo
+1. [AWS DeepRacer](https://aws.amazon.com/deepracer/)
+2. [AWS DeepRacer Document](https://docs.aws.amazon.com/deepracer/latest/developerguide/what-is-deepracer.html)
