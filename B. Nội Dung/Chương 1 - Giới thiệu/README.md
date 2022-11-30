@@ -23,6 +23,7 @@ Với những services ở trên, AWSDeepRacer giúp người dùng không cần
 ## 1.2. Học tăng cường (Reinforment Learning)
 ### 1.2.1. Khái niệm
 Reinforcement Learning là một lĩnh vực của ML,trong đó agent học cách cư xử trong môi trường bằng cách thực hiện các hành động và xem kết quả của các hành động. Đối với mỗi hành động tốt, agent nhận được phản hồi tích cực và đối với mỗi hành động xấu, agent nhận được phản hồi tiêu cực hoặc hình phạt. Do đó agent tự phát triển theo kinh nghiệm của nó để giảm thiểu rủi ro và tăng khả năng đến mục đích hơn.
+![alt](Images/RL.jpg)
 ### 1.2.2. Ứng dụng vào AWS DeepRacer
 Trong reinforcement learning, các mô hình AWSDeepRacer dựa theo mục tiêu được định sẵn mà sẽ tác động với môi trường đường đua để tối đa hóa phần thưởng mà mình sẽ đạt.
 Mục tiêu của RL trong AWSDeepRacer là tìm ra mô hình tối ưu nhất sau khi huấn luyện để có thể đem ra thực nghiệm ngoài thế giới vật lý.
