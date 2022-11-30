@@ -79,4 +79,11 @@ Chọn các siêu tham số:
 - **Speed(Tốc độ)**: Tốc độ mà mô hình có thể đạt được. Tốc độ tối đa/tối thiểu được xác định sẵn cho mô hình.
 
      Các tham số của không gian liên tục:
+ ![image](https://user-images.githubusercontent.com/96776355/204811998-ee5519d1-714c-419f-bef2-142a8fe320a7.png)
+
+    Các tham số của không gian rời rạc:
+ ![image](https://user-images.githubusercontent.com/96776355/204812061-a68efda6-3d5a-41f5-86c5-c9f4b5c8e315.png)
+
+    Chọn phương tiện cần đào tạo( có thể chọn phương tiện tự tạo hoặc mặc định)
+![image](https://user-images.githubusercontent.com/96776355/204812148-1f580d4b-a33d-4b54-ac4f-fe59731aedb0.png)
 ## 2.3. Dánh giá hiệu suất
