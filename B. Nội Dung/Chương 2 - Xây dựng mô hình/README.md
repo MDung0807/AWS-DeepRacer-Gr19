@@ -51,5 +51,32 @@ Chúng ta có thể chọn số phương tiện trên đường đua kèm tốc 
 | Hoạt động trong policy  | Hoạt động ngoài policy  |
 | Sử dụng chính quy hóa entrophy   | Thêm entrophy vào mục tiêu tối ưu hóa |
 
+Chọn các siêu tham số:
+</br>
+- Thuật toán PPO: <br>
+![image](https://user-images.githubusercontent.com/96776355/204806893-ca945376-c561-4065-b1c4-38a0db99a363.png) <br>
+![image](https://user-images.githubusercontent.com/96776355/204806918-3ea5c883-e1dd-403e-8cee-714746bfda38.png)<br>
+- Thuật toán SAC:<br>
+![image](https://user-images.githubusercontent.com/96776355/204806963-a8389e66-7f50-4be9-8a48-e8c95c29f892.png)<br>
+![image](https://user-images.githubusercontent.com/96776355/204807008-28975800-f3c5-4104-8bb1-7e797275b67e.png)<br>
+**Định nghĩa các siêu tham số** 
 
+| Tham số | Định nghĩa |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Batch size | Số lượng experience xe gần đây được lấy mẫu ngẫu nhiên từ bộ đệm trải nghiệm và được sử dụng để cập nhật trọng số mạng nơ-ron. Nếu bạn có 5120 experience trong bộ đệm và chỉ định kích thước batch là 512, sau đó bỏ qua lấy mẫu ngẫu nhiên, bạn sẽ nhận được 10 batch experience. Lần lượt, mỗi batch sẽ được sử dụng để cập nhật trọng số mạng thần kinh của bạn trong quá trình đào tạo. Sử dụng kích thước batch lớn hơn để thúc đẩy cập nhật ổn định và trơn tru hơn đối với trọng số mạng nơ-ron, nhưng lưu ý khả năng quá trình đào tạo có thể chậm hơn.  |
+| Number of epochs | Một epoch đại diện cho một lần đi qua tất cả các batch, trong đó trọng số mạng nơ-ron được cập nhật sau mỗi batch được xử lý, trước khi tiếp tục với batch tiếp theo. 10 epochs ngụ ý rằng bạn sẽ cập nhật trọng số mạng nơ-ron, sử dụng tất cả các batch một lần, nhưng lặp lại quá trình này 10 lần. Sử dụng số lượng epoch lớn hơn để thúc đẩy các bản cập nhật ổn định hơn, nhưng mong đợi quá trình đào tạo chậm hơn. Khi kích thước batch nhỏ, bạn có thể sử dụng số lượng epoch nhỏ hơn.  |
+| Learning rate | Tốc độ học tập kiểm soát mức độ cập nhật đối với trọng số mạng nơ-ron. Nói một cách đơn giản, khi bạn cần thay đổi trọng số của chính sách của mình để đạt được phần thưởng tích lũy tối đa, bạn nên thay đổi chính sách của mình bao nhiêu. Tỷ lệ học tập lớn hơn sẽ dẫn đến đào tạo nhanh hơn, nhưng nó có thể gặp khó khăn để hội tụ. Tỷ lệ học tập nhỏ hơn dẫn đến sự hội tụ ổn định, nhưng có thể mất nhiều thời gian để đào tạo. |
+| Exploration  | Điều này đề cập đến phương pháp được sử dụng để xác định sự đánh đổi giữa thăm dò và khai thác. Nói cách khác, chúng ta nên sử dụng phương pháp nào để xác định khi nào chúng ta nên ngừng khám phá (lựa chọn ngẫu nhiên các hành động) và khi nào chúng ta nên khai thác kinh nghiệm mà chúng ta đã tích lũy được. Vì chúng tôi sẽ sử dụng không gian hành động rời rạc, bạn nên luôn chọn CategoricalParameters. |
+| Entropy | Một mức độ không chắc chắn, hoặc ngẫu nhiên, được thêm vào phân phối xác suất của không gian hành động. Điều này giúp thúc đẩy việc lựa chọn các hành động ngẫu nhiên để khám phá trạng thái / không gian hành động một cách rộng rãi hơn. |
+| Discount factor | Hệ số chỉ định mức độ đóng góp của phần thưởng trong tương lai vào phần thưởng tích lũy dự kiến. Hệ số chiết khấu càng lớn thì mô hình càng xa để xác định phần thưởng tích lũy mong đợi và đào tạo càng chậm. Với hệ số chiết khấu là 0,9, chiếc xe bao gồm phần thưởng từ thứ tự 10 bước trong tương lai để thực hiện một bước di chuyển. Với hệ số chiết khấu là 0,999, chiếc xe sẽ xem xét phần thưởng từ thứ tự 1000 bước trong tương lai để thực hiện một bước đi. Các giá trị hệ số chiết khấu được đề xuất là 0,99, 0,999 và 0,9999. |
+| Loss type | Loại tổn thất chỉ định loại hàm mục tiêu (hàm chi phí) được sử dụng để cập nhật trọng số mạng. Các loại lỗi mất bình phương Huber và Trung bình hoạt động tương tự đối với các bản cập nhật nhỏ. Nhưng khi các bản cập nhật trở nên lớn hơn, tổn thất Huber có gia số nhỏ hơn so với tổn thất lỗi trung bình bình phương. Khi bạn gặp vấn đề về hội tụ, hãy sử dụng kiểu mất Huber. Khi độ hội tụ tốt và bạn muốn đào tạo nhanh hơn, hãy sử dụng kiểu mất lỗi bình phương trung bình. |
+### 2.2.4.	Cách thức vận hành của mô hình
+**Chọn không gian hành động:**
+- **Không gian hành động liên tục**: Một không gian hành động liên tục cho phép tác nhân chọn một hành động từ một loạt các giá trị cho mỗi trạng thái.
+- **Không gian hành động rời rạc**: Một không gian hành động rời rạc đại diện cho tất cả các hành động có thể có của tác nhân đối với từng trạng thái trong một tập hợp hữu hạn. <br>
+![image](https://user-images.githubusercontent.com/96776355/204809768-1811c74d-9a99-48af-9a73-6ea173b27a19.png)
+- **Steering angle(Góc lái)**: Các tham số của không gian liên tục: Góc lái xác định phạm vi góc lái mà bánh trước của mô hình của bạn có thể quay.
+- **Speed(Tốc độ)**: Tốc độ mà mô hình có thể đạt được. Tốc độ tối đa/tối thiểu được xác định sẵn cho mô hình.
+
+     Các tham số của không gian liên tục:
 ## 2.3. Dánh giá hiệu suất
