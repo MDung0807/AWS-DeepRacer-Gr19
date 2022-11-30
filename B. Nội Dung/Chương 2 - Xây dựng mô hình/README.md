@@ -12,9 +12,9 @@
 - **Chúng ta có thể thay đổi diện mạo cho phương tiện của mình bằng cách chọn vào màu sắc mong muốn**
 ![alt](Images/4.png)
 - **Tùy chọn loại camera để phù hợp với mục đích đào tạo.**
-- - Nếu bạn muốn đua trên một chiếc xe duy nhất trên đường đua time-trial , hãy cân nhắc sử dụng camera đơn. Để đua quanh một đường đua mà không có xe hoặc chướng ngại vật khác, bạn không cần phải có đầu vào phức tạp, hơn nữa, bạn càng đi càng phức tạp thì quá trình đào tạo sẽ mất nhiều thời gian hơn.
-- - Cân nhắc sử dụng cảm biến camera âm thanh nổi khi bạn muốn xây dựng mô hình tránh vật thể hoặc mô hình đua xe head-to-head. Bạn sẽ cần sử dụng chức năng phần thưởng theo cách để mô hình học được các đặc điểm chiều sâu từ hình ảnh của bạn, điều có thể làm được với máy ảnh âm thanh nổi. Lưu ý rằng trong các mô hình đua xe đối đầu, camera âm thanh nổi có thể không đủ để che các điểm mù.
-- - Cân nhắc thêm LIDAR vào mô hình của bạn nếu bạn muốn tham gia vào các cuộc đua head-to-head. Cảm biến LIDAR hướng về phía sau và quét cách xe khoảng 0,5m. Nó sẽ phát hiện những chiếc xe đang tiến đến từ phía sau hoặc trong những điểm mù khi rẽ.
+    - Nếu bạn muốn đua trên một chiếc xe duy nhất trên đường đua time-trial , hãy cân nhắc sử dụng camera đơn. Để đua quanh một đường đua mà không có xe hoặc chướng ngại vật khác, bạn không cần phải có đầu vào phức tạp, hơn nữa, bạn càng đi càng phức tạp thì quá trình đào tạo sẽ mất nhiều thời gian hơn.
+    - Cân nhắc sử dụng cảm biến camera âm thanh nổi khi bạn muốn xây dựng mô hình tránh vật thể hoặc mô hình đua xe head-to-head. Bạn sẽ cần sử dụng chức năng phần thưởng theo cách để mô hình học được các đặc điểm chiều sâu từ hình ảnh của bạn, điều có thể làm được với máy ảnh âm thanh nổi. Lưu ý rằng trong các mô hình đua xe đối đầu, camera âm thanh nổi có thể không đủ để che các điểm mù.
+    - Cân nhắc thêm LIDAR vào mô hình của bạn nếu bạn muốn tham gia vào các cuộc đua head-to-head. Cảm biến LIDAR hướng về phía sau và quét cách xe khoảng 0,5m. Nó sẽ phát hiện những chiếc xe đang tiến đến từ phía sau hoặc trong những điểm mù khi rẽ.
 ![alt](Images/5.png)
 - **Sau khi hoàn tất xe mới sẽ xuất hiện bên trong ga-ra**
 ![alt](Images/6.png)
@@ -32,9 +32,9 @@ Có 3 chế độ đua có thể lựa chọn:
 ![image](https://user-images.githubusercontent.com/96776355/204731876-24cb0aa6-c3b1-408b-a298-f164e10a0cca.png)
 - **Object avoidance**: Xe đua trên đường đua hai làn với một số chướng ngại vật cố định được đặt dọc theo đường đua. 
 ![image](https://user-images.githubusercontent.com/96776355/204731940-f0594e23-b43e-4ec0-b7a7-f36b799e8193.png)
-- - Ở chế độ này ta có thể chọn tiêu chí để đào tạo, đồng thời chọn số vật cản trên đường đua:
-- - - Fixed location: vị trí các đối tượng (box) được phân bố đều trên đường đua.
-- - - Random location: vị trí các đối tượng(box) được phân bố một cách ngẫu nhiên trên đường đua. Do đó việc đào tạo 1 phương tiện sẽ mất nhiều thời gian hơn so với Fixed location.
+    - Ở chế độ này ta có thể chọn tiêu chí để đào tạo, đồng thời chọn số vật cản trên đường đua:
+       - Fixed location: vị trí các đối tượng (box) được phân bố đều trên đường đua.
+       - Random location: vị trí các đối tượng(box) được phân bố một cách ngẫu nhiên trên đường đua. Do đó việc đào tạo 1 phương tiện sẽ mất nhiều thời gian hơn so với Fixed location.
 -	**Head-to-head**: Ở chế độ này chiếc xe của chúng ta sẽ đua với các phương tiện khác trên đường đua có 2 làn. 
 ![image](https://user-images.githubusercontent.com/96776355/204732944-e29038e9-8cec-4c40-92fb-6cc9b8491f1f.png) <br>
 Chúng ta có thể chọn số phương tiện trên đường đua kèm tốc độ được định sẵn, cũng như chọn thời gian nhỏ nhất và ngắn nhất để các xe này thay đổi làn đua một cách ngẫu nhiên.
@@ -42,6 +42,14 @@ Chúng ta có thể chọn số phương tiện trên đường đua kèm tốc 
 **Có 2 thuật toán huấn luyện**: PPO và SAC
 -	PPO: Thuật toán với policy gần
 -	SAC: Thuật toán với policy ngẫu nhiên
-![image](https://user-images.githubusercontent.com/96776355/204733562-dd6e8570-8cc9-45c2-9481-b7d82c4b8c32.png)
+![image](https://user-images.githubusercontent.com/96776355/204733562-dd6e8570-8cc9-45c2-9481-b7d82c4b8c32.png) <br>
+**Sự khác biệt cơ bản giữa 2 thuật toán**:
+
+| Proximal Policy Optimization (PPO)  | Soft Actor Critic (SAC) |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Hoạt động trong cả không gian hành động liên tục và rời rạc | Chỉ hoạt động trong không gian hành động liên tục  |
+| Hoạt động trong policy  | Hoạt động ngoài policy  |
+| Sử dụng chính quy hóa entrophy   | Thêm entrophy vào mục tiêu tối ưu hóa |
+
 
 ## 2.3. Dánh giá hiệu suất
