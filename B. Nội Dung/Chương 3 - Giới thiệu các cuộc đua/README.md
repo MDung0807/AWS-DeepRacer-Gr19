@@ -14,10 +14,24 @@ Bất kỳ học sinh nào trên 16 tuổi và hiện đang học trung học ho
 
 -Add race details
 Đặt tên cho giải đua và cài đặt thời gian cho giải đua
+![image](https://user-images.githubusercontent.com/74493768/204796990-f72ece99-5508-4509-b1c2-5c96455c5f76.png)
+
 Chọn đường đua cho giải đua
+![image](https://user-images.githubusercontent.com/74493768/204797025-f0f295e0-013f-4874-bb33-a4b638d66492.png)
+
 Thêm mô tả, cài đặt thể thức chi tiết cho giải đua cho giải đua 
+![image](https://user-images.githubusercontent.com/74493768/204797065-fd1cf060-4c55-4bb2-9abf-acb0b579bafd.png)
+
 -Review race details
 Xem lại các thông tin chi tiết của giải đua trước khi hoàn thành cài đặt
+![image](https://user-images.githubusercontent.com/74493768/204797117-54f15a2b-316f-4fcc-8aaa-f2a7bd126583.png)
+
 -Invite participants to your race
 Có thể mời người khác tham gia bằng cách gửi đường link dẫn tới giải đua và gửi email
+![image](https://user-images.githubusercontent.com/74493768/204797184-6394b3e9-9163-4d33-aaa5-fd505a18f641.png)
+![image](https://user-images.githubusercontent.com/74493768/204797215-4a348e05-b66f-4a88-ac3f-b67baee87307.png)
+
 Chọn manage races để cài đặt lại giải đua và chọn Race Details để hoàn thành cài đặt cho giải đua.
+![image](https://user-images.githubusercontent.com/74493768/204797257-75774ca2-3664-4150-b73f-f53a435c9ed0.png)
+
+
