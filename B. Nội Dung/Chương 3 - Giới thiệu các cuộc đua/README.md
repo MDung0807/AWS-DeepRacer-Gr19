@@ -10,6 +10,8 @@ Bất kỳ học sinh nào trên 16 tuổi và hiện đang học trung học ho
 
 ## 3.3. Cách tạo đường đua cho riêng mình
  Tạo giải đua dựa theo nhu cầu(Community race, Student Community race)
+ ![image](https://user-images.githubusercontent.com/74493768/204796861-72474d7a-d775-46c8-8fcb-34db179bd33a.png)
+
 -Add race details
 Đặt tên cho giải đua và cài đặt thời gian cho giải đua
 Chọn đường đua cho giải đua
