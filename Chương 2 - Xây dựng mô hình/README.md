@@ -79,4 +79,30 @@ Chọn các siêu tham số:
 - **Speed(Tốc độ)**: Tốc độ mà mô hình có thể đạt được. Tốc độ tối đa/tối thiểu được xác định sẵn cho mô hình.
 
      Các tham số của không gian liên tục:
-## 2.3. Dánh giá hiệu suất
+ ![image](https://user-images.githubusercontent.com/96776355/204811998-ee5519d1-714c-419f-bef2-142a8fe320a7.png)
+
+    Các tham số của không gian rời rạc:
+ ![image](https://user-images.githubusercontent.com/96776355/204812061-a68efda6-3d5a-41f5-86c5-c9f4b5c8e315.png)
+
+    Chọn phương tiện cần đào tạo( có thể chọn phương tiện tự tạo hoặc mặc định)
+![image](https://user-images.githubusercontent.com/96776355/204812148-1f580d4b-a33d-4b54-ac4f-fe59731aedb0.png)
+### 2.2.5.	Tinh chỉnh thuật toán thưởng và điều kiện dừng
+**Thuật toán thưởng( reward function):** ta có thể điều chỉnh để giúp model trở nên tốt hơn. Thuật toán thưởng mặc định khuyến khích model chạy sát đường trung tâm đường đua.<br>
+![image](https://user-images.githubusercontent.com/96776355/204821971-27bb644c-7d9d-4538-b821-aa617227dbb4.png)
+
+Khi chạy gần đường trung tâm thì phần thưởng nhận được sẽ cao hơn và ngược lại. Từ đó ta phát triển thuật toán thưởng từ các parameter để model có thể hoàn thành cuộc đua một cách tối ưu nhất.<br>
+**Điều kiện dừng:** khoảng thời gian lớn nhất để đào tạo cho model. Khoảng thời gian này nằm từ 5 đến 1440 phút.
+![image](https://user-images.githubusercontent.com/96776355/204822492-59097f18-979b-482e-b58b-6367875ad5ed.png)
+
+Ta có thể thử nghiệm độ hiệu quả sau khi đào tạo bằng cách tham dự cuộc đua 2022 re:Invert Warm Up <br>
+![image](https://user-images.githubusercontent.com/96776355/204822642-fd6814de-6480-4b09-a77f-04be9ad20caf.png)
+
+## 2.3. Đào tạo và đánh giá mô hình
+AWS DeepRacer thúc đẩy Amazon SageMaker đào tạo mô hình của bạn ở hậu trường và sử dụng AWS RoboMaker để mô phỏng tương tác của tác nhân với môi trường. Theo dõi cách model hành xử trong môi trường đã chọn, theo quy định của chức năng phần thưởng.
+
+Biểu đồ đào tạo ( sau khoảng thơi gian 30 phút)<br>
+![image](https://user-images.githubusercontent.com/96776355/204823018-a9e76445-fe2a-442f-b86a-08655ff2f5b9.png)
+
+**Đánh giá thuật toán thưởng sau khi đào tạo**
+- Sau khi đào tạo thành công thì model hoàn tất 3 vòng đua với thuật toán thưởng là đi ven đường trung tâm( mất khoảng 39 giây để hoàng thành 1 lap)<br>
+![image](https://user-images.githubusercontent.com/96776355/204823423-f5ac3a0c-e805-46dc-b8d6-65f3893c7584.png)
