@@ -90,7 +90,54 @@ Chọn các siêu tham số:
 **Thuật toán thưởng( reward function):** ta có thể điều chỉnh để giúp model trở nên tốt hơn. Thuật toán thưởng mặc định khuyến khích model chạy sát đường trung tâm đường đua.<br>
 ![image](https://user-images.githubusercontent.com/96776355/204821971-27bb644c-7d9d-4538-b821-aa617227dbb4.png)
 
-Khi chạy gần đường trung tâm thì phần thưởng nhận được sẽ cao hơn và ngược lại. Từ đó ta phát triển thuật toán thưởng từ các parameter để model có thể hoàn thành cuộc đua một cách tối ưu nhất.<br>
+Khi chạy gần đường trung tâm thì phần thưởng nhận được sẽ cao hơn và ngược lại.
+
+**Thuật toán khuyến khích đối tượng chạy trong đường đua.**
+![image](https://user-images.githubusercontent.com/96776355/205474828-2429f8a5-2a71-4731-87d2-bc42af09f5ab.png)
+
+**Thuật toán không cho đối tượng chạy theo zig-zag: giúp đối tượng đi gần trung tâm đường đua và tránh đánh lái quá nhiều.**
+![image](https://user-images.githubusercontent.com/96776355/205474838-3445ab6d-59a2-44b1-8091-64c4ab5a2bc7.png)
+
+**Thuật đối tượng tránh đối tượng và đối đầu - đi trên một làn đường và không va chạm (mặc định cho OA và h2h)**
+![image](https://user-images.githubusercontent.com/96776355/205474851-aa41c724-8420-486f-9163-34ae5e5b1eb5.png)
+
+Chức năng phần thưởng này thưởng cho tác nhân vì đã ở bên trong đường viền của đường đua và phạt tác nhân vì đã đến quá gần các vật thể phía trước nó. Đặc vụ có thể di chuyển từ làn này sang làn khác để tránh va chạm. Tổng phần thưởng là tổng trọng số của phần thưởng và hình phạt. Ví dụ này mang lại nhiều trọng lượng hơn cho hình phạt trong nỗ lực tránh va chạm. Thử nghiệm với các trọng số trung bình khác nhau để huấn luyện cho các kết quả hành vi khác nhau.
+
+Các inputparameter của thuật toán thưởng
+
+| Parameter | Ý nghĩa |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| "all_wheels_on_track": Boolean | Cờ đánh dấu trạng thái tất cả bánh xe có nằm trong đường đua. |
+| "x": float | Tọa độ x của agent tính bằng mét |
+| "y": float | Tọa độ y của agent tính bằng mét |
+| "closest_objects": [int, int] | Các chỉ số dựa trên zero-based của hai đối tượng gần nhất với vị trí hiện tại của agent (x, y). |
+| "closest_waypoints": [int, int] | Chỉ số của hai điểm tham chiếu gần nhất. |
+| "distance_from_center": float | Khoảng cách tính bằng mét từ trung tâm đường đua |
+| "is_crashed": Boolean | Cờ booleen cho biết agent có lỗi hay không |
+| "is_left_of_center": Boolean | Cờ booleen cho biết agent có bên phía trái so với đường trung tâm hay không. |
+| "is_offtrack": Boolean | Cờ booleen cho biết agent có đi chệch hướng hay không |
+| "is_reversed": Boolean | Cho biết agent đi theo chiều kim đồng hồ hay ngược chiều. |
+| "Heading": float | Góc đầu xe xo với trục x. |
+| "objects_distance": [float, ] | Danh sách khoảng cách của các đối tượng tính bằng mét giữa 0 và track_length liên quan đến vạch xuất phát. |
+| "objects_heading": [float, ] | Danh sách các heading của đối tượng theo độ giữa -180 và 180. |
+| "objects_left_of_center": [Boolean, ] | danh sách các cờ Boolean cho biết các đối tượng của phần tử có ở bên trái tâm (Đúng) hay không (Sai) |
+| "objects_location":[(float, float),] | Danh sách các vị trí đối tượng [(x,y), ...]. |
+| "objects_speed": [float, ] | Danh sách tốc độ của các đối tượng tính bằng mét trên giây.  |
+| "progress": float | Phần trăm đường đua đã hoàn thành  |
+| "speed": float | Tốc độ của đối tượng được tính bằng mét trên giây |
+| "steering_angle": float | Góc lái của đối tượng được tính bằng độ |
+| "steps": int, | Số lượng các bước đã hoàn thành. |
+| "track_length": float | Chiều dài đường đua được tính bằng mét. |
+| "track_width": float | Chiều rộng đường đua được tính bằng mét. |
+| "waypoints": [(float, float), ] | danh sách (x,y) là các cột mốc dọc theo trung tâm đường đua |
+
+Từ đó ta phát triển thuật toán thưởng từ các parameter để model có thể hoàn thành cuộc đua một cách tối ưu nhất.<br>
+
+**Thuật toán thưởng nâng cao:** Đối tượng đi gần đường trung tâm với tốc độ cao và ít thay đổi góc lái sẽ có phần thưởng cao hơn và ngược lại.
+![image](https://user-images.githubusercontent.com/96776355/205474464-5a6ade1f-fffe-47ff-8a0a-7ec49d7f0c19.png)
+
+
+
 **Điều kiện dừng:** khoảng thời gian lớn nhất để đào tạo cho model. Khoảng thời gian này nằm từ 5 đến 1440 phút.
 ![image](https://user-images.githubusercontent.com/96776355/204822492-59097f18-979b-482e-b58b-6367875ad5ed.png)
 
