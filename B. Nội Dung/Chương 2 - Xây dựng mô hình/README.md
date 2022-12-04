@@ -154,3 +154,4 @@ Biểu đồ đào tạo ( sau khoảng thơi gian 30 phút)<br>
 - Sau khi đào tạo thành công thì model hoàn tất 3 vòng đua với thuật toán thưởng là đi ven đường trung tâm( mất khoảng 39 giây để hoàng thành 1 lap)<br>
 ![image](https://user-images.githubusercontent.com/96776355/204823423-f5ac3a0c-e805-46dc-b8d6-65f3893c7584.png)
 
+aaa
