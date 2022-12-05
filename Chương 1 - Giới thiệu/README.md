@@ -16,6 +16,7 @@ Với những services ở trên, AWSDeepRacer giúp người dùng không cần
 - Dùng API và lưu trữ thông tin người đăng nhập bằng AWS CloudTrail.
 - Dùng các cách bảo mật mã hóa.
 ### 1.1.3. Hạn chế
+- Vì đây là mô phỏng không thể nắm bắt chính xác tất cả các khía cạnh của thế giới thực.
 ### 1.1.4. AWS DeepRacer Evo
 - AWS DeepRacer Evo là thế hệ tiếp theo trong đua xe tự hành. Nó được trang bị đầy đủ camera âm thanh nổi và cảm biến LiDAR để cho phép tránh vật thể và đua đối đầu, cung cấp cho bạn mọi thứ bạn cần để đưa cuộc đua của mình lên một tầm cao mới. Những cảm biến bổ sung này cho phép xe xử lý các môi trường phức tạp hơn và thực hiện các hành động cần thiết cho trải nghiệm đua xe mới. Trong các cuộc đua tránh vật thể, bạn sử dụng các cảm biến để phát hiện và tránh các chướng ngại vật trên đường đua. Đối đầu trực tiếp, bạn đua với một chiếc xe khác trên cùng đường đua và cố gắng tránh nó trong khi vẫn quay đầu trong thời gian vòng đua tốt nhất.
 - Camera trái và phải hướng về phía trước tạo thành camera âm thanh nổi, giúp xe tìm hiểu thông tin độ sâu trong hình ảnh. Sau đó, nó có thể sử dụng thông tin này để cảm nhận và tránh các vật thể mà nó tiếp cận trên đường đua. Cảm biến LiDAR hướng về phía sau sẽ phát hiện các vật thể phía sau và bên cạnh xe.
